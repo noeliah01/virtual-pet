@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+        font-family: 'Georgia', Georgia, serif;
+        font-weight: bold
+      }
+      .header {
+          padding: 32px
+      }
+      .pet-name {
+          font-size: 32px
+      }
+      .main {
+        display: grid; /* this tells `main` to be a grid*/
+        /* this next line tells `main` that, since it is a grid now, to separate into 2 equal columns*/
+        grid-template-columns: 1fr 1fr; 
+      }
+      .pet-image { 
+          height: 500px;
+          max-width: 100%;
+          padding: 32px;
+      }
+      .image-area {
+          display: grid;
+          background-color: deepskyblue;
+          justify-items: center;
+      }
+      .activity-icon {
+          height: 40 px;
+          width: 40 px;
+      }
+      .interactive-area {
+        background-color: white;
+        display: grid;
+        align-items: center; /* This centers all elements inside of this element vertically */
+        justify-items: center; /* This centers all elements inside of this element horizontally */
+      }
+      .activity-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* This creates 3 columns of equal length */
+        width: 90%;
+        align-items: center;
+      }
+      .activity-button {
+          background-color: thistle;
+          border-radius: 8px;
+          box-shadow: 0 0 5px 0 grey;
+          color: white;     
+          cursor: pointer;
+          height: 100%;
+          display: grid;
+          align-items: center;
+          justify-items: center;
+           }
+        </style>
+    </head>
+        <body>
+            <div class="header">
+                <div class ="pet-name"> Piplup </div>
+                <div class="description"> Piplup is a small, yet powerful water Pokemon.</div>        
+            </div>
+            <div class="main">
+              <div class="image-area">
+                <img class="pet-image" src='neutral.png' />
+            </div>
+              <div class="interactive-area">
+                <div class="activity-row">
+                    <img class="activity-icon" src="food.png" />
+                    <div class="activity-stat">100</div>
+                    <div class="activity-button">eat food</div>
+                </div>
+                <div class="activity-row">
+                    <img class="activity-icon" src="water.jpeg" />
+                    <div class="activity-stat">50</div>
+                    <div class="activity-button">drink water</div>
+                </div>
+                <div class="activity-row">
+                    <img class="activity-icon" src="exercise.png" />
+                    <div class="activity-stat">5</div>
+                    <div class="activity-button">exercise</div>
+              </div>
+        </body>
+</html>
