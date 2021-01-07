@@ -68,18 +68,67 @@
               <div class="interactive-area">
                 <div class="activity-row">
                     <img class="activity-icon" src="food.png" />
-                    <div class="activity-stat">100</div>
-                    <div class="activity-button">eat food</div>
+                    <div class="activity-stat" id = "food-stat">50</div>
+                    <div class="activity-button" onclick = "giveFood('Feeding pet!')">eat food</div>
                 </div>
                 <div class="activity-row">
                     <img class="activity-icon" src="water.jpeg" />
-                    <div class="activity-stat">50</div>
-                    <div class="activity-button">drink water</div>
+                    <div class="activity-stat" id = "water-stat">50</div>
+                    <div class="activity-button" onclick = "giveWater('Drinking water!')">drink water</div>
                 </div>
                 <div class="activity-row">
                     <img class="activity-icon" src="exercise.png" />
-                    <div class="activity-stat">5</div>
-                    <div class="activity-button">exercise</div>
+                    <div class="activity-stat" id = "exercise-stat">50</div>
+                    <div class="activity-button" onclick = "giveExercise('Exercising!')">exercise</div>
               </div>
         </body>
+        <script>
+            var food = 50;
+            var water = 50;
+            var exercise = 50;
+
+            var giveFood = () => {
+                food = food + 15;
+                water = water - 5;
+                exercise = exercise - 5;
+                console.log(food)
+                updateHTML()
+            }
+
+            var giveWater = () => {
+                water = water + 15;
+                food = food - 5;
+                exercise = exercise - 2;
+                console.log(water)
+                updateHTML()
+            }
+
+            var giveExercise = () => {
+                exercise = exercise + 30;
+                water = water - 15;
+                food = food - 10;
+                console.log(exercise)
+                updateHTML()
+            }
+
+            var updateHTML = () => {
+                document.getElementById("food-stat").innerHTML = food // this allows us to make changes to an element in HTML via JavaScript by referencing the element & linking it to a variable
+                document.getElementById("water-stat").innerHTML = water
+                document.getElementById("exercise-stat").innerHTML = exercise
+                var lowestStat = Math.min(food, water, exercise)
+                
+                if lowestStat <= 0 => {
+                    imageSrc = "passed-out.jpeg"
+                }
+                else if lowestStat < 25 => {
+                    imageSrc = "tired.jpeg"
+                }
+                else if lowestStat < 75 => {
+                    imageSrc = "neutral.png"
+                }
+                else if lowestStat < 150 => {
+                    
+                }
+
+        </script>
 </html>
